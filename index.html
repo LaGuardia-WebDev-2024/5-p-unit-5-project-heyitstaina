@@ -2,12 +2,12 @@
 Requirements
 [Yes] <div> and <span>
 [Yes] height: and width:
-[  ] margin: and padding: 
-[  ] Three Images
+[Yes] margin: and padding: 
+[Yes] Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Flexbox
-[ no ] Feature 2 - Flip Card
+[Yes] Feature 2 - Flip Card
 [ no ] Feature 3 - Navbar
 [ no ] Feature 4 - Shaking Animation
 [ no ] Feature 5 - Gradient Background
@@ -16,76 +16,204 @@ Select ONE Additional Feature to Add
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Unit 5 Project</title>
+    <meta charset="utf-8" />
+    <style>
 
-<head>
-  <title>Unit 5 Project</title>
-  <meta charset="utf-8">
-  <style>
-  .info {
+      body {
+        background-image: url("https://wallpapers.com/images/hd/deep-blue-christmas-background-with-snowflakes-jud63xtzi25pakx0.jpg");
+
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+      }
+      .info {
         background: rgb(219, 235, 255);
         width: 70%;
         height: 180px;
         overflow-y: auto;
         overflow-x: hidden;
+        <center>
       }
-      #show{
+      #show {
         width: 120px;
       }
-    .first-sentence {
-            color: red;
-            font-style: italic;
-          }
-          #official-info {
-            background-color: rgb(250, 230,230);
-            border-radius: 10px;
-          }
-  </style>
-</head>
-<body>
-   <h1>The Nutcracker</h1>
+      .first-sentence {
+        color: red;
+        font-style: italic;
+      }
+      #official-info {
+        background-color: rgb(250, 230, 230);
+        border-radius: 10px;
+      }
+      body {
+        font-family: monospace;
+        color: blue;
+      }
+      .photo-gallery {
+        background: rgb(255, 254, 217);
+        width: 400px;
+        margin-left: auto;
+        border: 6px groove purple;
+      }
+      .photo {
+        width: 200px;
+        margin: 15px 0px 6px;
+        border: 6px groove blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Nutcracker</h1>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            src="https://c8.alamy.com/comp/2RE1NJA/beautiful-cartoon-illustration-with-christmas-tree-magic-ball-watercolor-xmas-celebration-concept-2RE1NJA.jpg"
+            alt="Avatar"
+            style="width: 300px; height: 300px"
+          />
+        </div>
+        <div class="flip-card-back">
+          <h1>The Nutcracker</h1>
+          <p>Staring Liliana!</p>
+          <p>Enjoy the show!🎄❄🎅🤶</p>
+        </div>
+      </div>
+    </div>
 
     <img
       id="show"
-         class="pic"
+      class="pic"
       src="https://www.cityofrc.us/sites/default/files/2023-06/The%20Nutcracker.png"
       alt="Photo of the show"
     />
 
     <div class="info">
-      <p>
-        The <strong>Nutcracker</strong> is the connected body of salty water that
-        covers 70.8% of the Earth's surface. The sea moderates the Earth's
-        climate and has important roles in the water cycle, carbon cycle, and
-        nitrogen cycle. Although the sea has been travelled and explored since
-        prehistory, the modern scientific study of the sea—oceanography—dates
-        broadly to the British Challenger expedition of the 1870s. The sea is
-        conventionally divided into four or five large sections, such as the
-        Pacific, called oceans while smaller sections, such as the
-        Mediterranean, are known as seas.
-      </p>
-      <p>
-        Owing to the present state of continental drift, the Northern Hemisphere
-        is now fairly equally divided between land and sea (a ratio of about
-        2:3) but the South is overwhelmingly oceanic (1:4.7). Salinity in the
-        open ocean is generally in a narrow band around 3.5% by mass, although
-        this can vary in more landlocked waters, near the mouths of large
-        rivers, or at great depths. About 85% of the solids in the open sea are
-        sodium and chloride. Deep-sea currents are produced by differences in
-        salinity and temperature. Surface currents are formed by the friction of
-        waves produced by the wind and by tides, the changes in local sea level
-        produced by the gravity of the Moon and Sun. The direction of all of
-        these is governed by surface and submarine land masses and by the
-        rotation of the Earth (the Coriolis effect).
-      </p>
+      <div class="photo-gallery">
+        <img
+          class="photo"
+          src="https://i.guim.co.uk/img/media/0da9745a8960738de472ddcbd651a581fc7a9357/0_115_3000_1800/master/3000.jpg?width=700&quality=85&auto=format&fit=max&s=5e825f9d69ca77e851fa2b78e67749ea"
+        />
 
-      <a href="http://en.wikipedia.org/wiki/Sea">Read more on Wikipedia</a>
+        <img
+          class="photo"
+          src="https://statetheatre.info/wp-content/uploads/2022/06/Act-1-179.jpg"
+        />
+
+        <img
+          class="photo"
+          src="https://i0.wp.com/secondcitymom.com/wp-content/uploads/2020/12/img_7388.jpg?resize=620%2C775&ssl=1"
+        />
+      </div>
+      <p>
+        The <strong>Nutcracker</strong> "is loosely based on the E.T.A. Hoffmann
+        fantasy story The Nutcracker and the Mouse King, about a girl who
+        befriends a nutcracker that comes to life on Christmas Eve and wages a
+        battle against the evil Mouse King."
+      </p>
+      <p>
+        "According to German folklore, nutcrackers we given as keepsakes to
+        bring luck to the family and protect the home. It is said that they
+        represent strength and power and watches over the family keeping evil
+        spirits and danger away."
+      </p>
+      <p>
+        "Do The Nutcracker and Clara fall in love? THIS IS NOT A LOVE STORY
+        Unlike almost every other ballet from the 19th century, “The Nutcracker”
+        isn't about falling in love. So if you see the heroine Clara dancing a
+        romantic pas de deux with the Nutcracker prince, you're watching an
+        alternative version; I call this anti-“Nutcracker” behavior."
+      </p>
+      <p>
+        Run Time: 2 hours and 3 minutes, including a 25-minute intermission.
+      </p>
+      <p>ticket price: $5 per person</p>
+
+      <a href="https://en.wikipedia.org/wiki/The_Nutcracker"
+        >Read more on Wikipedia</a
+      >
     </div>
- 
- <div id="official-info">
-         
-      <p> <span class="first-sentence"> Liliana, plays a ___ in this version of the play.</span> They can be quite large, and lengths over a meter and weights up to 100 kg are not uncommon, though obviously in such a large group, species vary considerably. They swallow prey rather than biting pieces off it. They do not have many teeth on the edges of their jaws, but they have heavy crushing tooth plates inside the pharynx. They habitually eat fish, octopuses, and crustaceans. Reports of fatal attacks on humans by the largest species, the giant grouper (Epinephelus lanceolatus) are unconfirmed. </p>
 
-        <p>Their mouths and gills form a powerful sucking system that sucks their prey in from a distance. They also use their mouths to dig into sand to form their shelters under big rocks, jetting it out through their gills. Their gill muscles are so powerful, it is nearly impossible to pull them out of a cave if they feel attacked and extend those muscles to lock themselves in.</p>
-  </div>
-</body>
+    <div id="official-info">
+      <p>
+        <span class="first-sentence"> Liliana is the star of the show! </span>
+        She plays Clara. With Liliana's amzing dance, sining, and acting skills
+        she give the play a whole other perspective. The character Clara is "the
+        young girl who is the heroine of the story. She receives the Nutcracker
+        doll at her parent's annual holiday party, which begins the adventure.
+        She wears banana curls and ribbons in her hair, a pretty white dress and
+        petticoats. Fritz is Clara's mischievous younger brother."
+      </p>
+
+      <p>
+        Their mouths and gills form a powerful sucking system that sucks their
+        prey in from a distance. They also use their mouths to dig into sand to
+        form their shelters under big rocks, jetting it out through their gills.
+        Their gill muscles are so powerful, it is nearly impossible to pull them
+        out of a cave if they feel attacked and extend those muscles to lock
+        themselves in.
+      </p>
+    </div>
+
+    <div class="photo-gallery">
+      <img 
+        class="photo"
+        src="https://i.guim.co.uk/img/media/0da9745a8960738de472ddcbd651a581fc7a9357/0_115_3000_1800/master/3000.jpg?width=700&quality=85&auto=format&fit=max&s=5e825f9d69ca77e851fa2b78e67749ea"
+      />
+
+      <img
+        class="photo"
+        src="https://statetheatre.info/wp-content/uploads/2022/06/Act-1-179.jpg"
+      />
+
+      <img
+        class="photo"
+        src="https://i0.wp.com/secondcitymom.com/wp-content/uploads/2020/12/img_7388.jpg?resize=620%2C775&ssl=1"
+      />
+    </div>
+  </body>
 </html>

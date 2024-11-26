@@ -1,13 +1,13 @@
 <!-- Unit 5 Project
 Requirements
-[  ] <div> and <span>
-[  ] height: and width:
-[  ] margin: and padding: 
-[  ] Three Images
+[Yes] <div> and <span>
+[Yes] height: and width:
+[Yes] margin: and padding: 
+[Yes] Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Flexbox
-[ no ] Feature 2 - Flip Card
+[ Yes ] Feature 2 - Flip Card
 [ no ] Feature 3 - Navbar
 [ no ] Feature 4 - Shaking Animation
 [ no ] Feature 5 - Gradient Background
@@ -16,17 +16,194 @@ Select ONE Additional Feature to Add
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Unit 5 Project</title>
+    <meta charset="utf-8" />
+    <style>
 
-<head>
-  <title>Unit 5 Project</title>
-  <meta charset="utf-8">
-  <style>
+      body {
+        background-image: url("https://wallpapers.com/images/hd/deep-blue-christmas-background-with-snowflakes-jud63xtzi25pakx0.jpg");
 
-  </style>
-</head>
-<body>
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
 
- 
 
-</body>
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      .flip-card-back {
+        background-color: #5f2eb3;
+        color: pink;
+        transform: rotateY(180deg);
+      }
+      .info {
+        background: rgb(219, 235, 255);
+        width: 50%;
+        height: 180px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+      }
+      #show {
+        width: 120px;
+      }
+      .first-sentence {
+        color: red;
+        font-style: italic;
+      }
+      #official-info {
+        background-color: rgb(213, 204, 224);
+        border-radius: 10px;
+        width: 50%;
+      }
+      body {
+        font-family: monospace;
+        color: blue;
+      }
+      .photo-gallery {
+        background: rgb(194, 235, 240);
+        width: 600px;
+        margin-center: auto;
+        border: 50px groove purple;
+        
+      }
+      .photo {
+        width: 200px;
+        margin: 15px 0px 6px;
+        border: 30px groove blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Nutcracker</h1>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            src="https://c8.alamy.com/comp/2RE1NJA/beautiful-cartoon-illustration-with-christmas-tree-magic-ball-watercolor-xmas-celebration-concept-2RE1NJA.jpg"
+            alt="Avatar"
+            style="width: 300px; height: 300px"
+          />
+        </div>
+        <div class="flip-card-back">
+          <h1>The Nutcracker</h1>
+          <h2>Staring Liliana!</h2>
+          <h3>Enjoy the show!🎄❄🎅🤶</h3>
+        </div>
+      </div>
+    </div>
+
+    <img
+      id="show"
+      class="pic"
+      src="https://www.cityofrc.us/sites/default/files/2023-06/The%20Nutcracker.png"
+      alt="Photo of the show"
+    />
+
+    <div class="info">
+      
+      <p>
+        The <strong>Nutcracker</strong> "is loosely based on the E.T.A. Hoffmann
+        fantasy story The Nutcracker and the Mouse King, about a girl who
+        befriends a nutcracker that comes to life on Christmas Eve and wages a
+        battle against the evil Mouse King."
+      </p>
+      <p>
+        "According to German folklore, nutcrackers we given as keepsakes to
+        bring luck to the family and protect the home. It is said that they
+        represent strength and power and watches over the family keeping evil
+        spirits and danger away."
+      </p>
+      <p>
+        "Do The Nutcracker and Clara fall in love? THIS IS NOT A LOVE STORY
+        Unlike almost every other ballet from the 19th century, “The Nutcracker”
+        isn't about falling in love. So if you see the heroine Clara dancing a
+        romantic pas de deux with the Nutcracker prince, you're watching an
+        alternative version; I call this anti-“Nutcracker” behavior."
+      </p>
+      <p>
+        Run Time: 2 hours and 3 minutes, including a 25-minute intermission.
+      </p>
+      <p>ticket price: $5 per person</p>
+
+      <a href="https://en.wikipedia.org/wiki/The_Nutcracker"
+        >Read more on Wikipedia</a
+      >
+    </div>
+
+    <div id="official-info">
+      <p>
+        <span class="first-sentence"> Liliana is the star of the show! </span>
+        She plays Clara. With Liliana's amzing dance, sining, and acting skills
+        she give the play a whole other perspective. The character Clara is "the
+        young girl who is the heroine of the story. She receives the Nutcracker
+        doll at her parent's annual holiday party, which begins the adventure.
+        She wears banana curls and ribbons in her hair, a pretty white dress and
+        petticoats. Fritz is Clara's mischievous younger brother."
+      </p>
+
+      <p>
+       ❄🎄Enjoy the show!🎄❄
+      </p>
+    </div>
+
+    <div class="photo-gallery">
+      <img 
+        class="photo"
+        src="https://i.guim.co.uk/img/media/0da9745a8960738de472ddcbd651a581fc7a9357/0_115_3000_1800/master/3000.jpg?width=700&quality=85&auto=format&fit=max&s=5e825f9d69ca77e851fa2b78e67749ea"
+      />
+
+      <img
+        class="photo"
+        src="https://statetheatre.info/wp-content/uploads/2022/06/Act-1-179.jpg"
+      />
+
+      <img
+        class="photo"
+        src="https://i0.wp.com/secondcitymom.com/wp-content/uploads/2020/12/img_7388.jpg?resize=620%2C775&ssl=1"
+      />
+      
+      <img
+        class="photo"
+        src="      https://skyhorse-us.imgix.net/covers/9781631583629.jpg?auto=format&w=298
+"
+      />
+      
+      
+    </div>
+  </body>
 </html>
